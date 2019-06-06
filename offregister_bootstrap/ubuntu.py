@@ -1,4 +1,4 @@
-from operator import __ge__ as gte
+from operator import __ge__ as gte, __eq__ as eq
 from fabric.operations import run
 from offregister_fab_utils.apt import apt_depends
 from offregister_fab_utils.misc import merge_funcs, require_os_version, fab_steps
@@ -15,7 +15,8 @@ def set_hostname0(cache, *args, **kwargs):
 
 @require_os_version(16.04, op=gte)
 def motd1(*args, **kwargs):
-    apt_depends('landscape-common')
+    if run('grep -Fqzw 18.10 /etc/lsb-release', warn_only=True, quiet=True).failed:
+        apt_depends('landscape-common')
 
 
 @require_os_version(16.04, op=gte)
