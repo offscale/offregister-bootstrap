@@ -7,16 +7,16 @@ from offregister_fab_utils.ubuntu.hostname import set_hostname
 
 @require_os_version(16.04, op=gte)
 def set_hostname0(cache, *args, **kwargs):
-    hostname = run('hostname', quiet=True)
-    if '.' in hostname:
-        set_hostname(hostname.partition('.')[0])
-    return {'os_version': cache['os_version']}
+    hostname = run("hostname", quiet=True)
+    if "." in hostname:
+        set_hostname(hostname.partition(".")[0])
+    return {"os_version": cache["os_version"]}
 
 
 @require_os_version(16.04, op=gte)
 def motd1(*args, **kwargs):
-    if run('grep -Fqzw 18.10 /etc/lsb-release', warn_only=True, quiet=True).failed:
-        apt_depends('landscape-common')
+    if run("grep -Fqzw 18.10 /etc/lsb-release", warn_only=True, quiet=True).failed:
+        apt_depends("landscape-common")
 
 
 @require_os_version(16.04, op=gte)
@@ -24,10 +24,10 @@ def expand_partition2(*args, **kwargs):
     pass
 
 
-'''from offregister_inline import ubuntu as offregister_inline_ubuntu
+"""from offregister_inline import ubuntu as offregister_inline_ubuntu
 
 
 @merge_funcs(*fab_steps(offregister_inline_ubuntu))
 def be_awesome1(cache, *args, **kwargs):
     return 'awesome', cache['os_version']
-'''
+"""
