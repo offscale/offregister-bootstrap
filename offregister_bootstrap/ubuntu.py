@@ -1,7 +1,8 @@
-from operator import __ge__ as gte, __eq__ as eq
+from operator import __ge__ as gte
+
 from fabric.operations import run
 from offregister_fab_utils.apt import apt_depends
-from offregister_fab_utils.misc import merge_funcs, require_os_version, fab_steps
+from offregister_fab_utils.misc import require_os_version
 from offregister_fab_utils.ubuntu.hostname import set_hostname
 
 
