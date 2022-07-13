@@ -1,6 +1,5 @@
 from operator import __ge__ as gte
 
-from fabric.operations import run
 from offregister_fab_utils.apt import apt_depends
 from offregister_fab_utils.misc import require_os_version
 from offregister_fab_utils.ubuntu.hostname import set_hostname
@@ -8,7 +7,7 @@ from offregister_fab_utils.ubuntu.hostname import set_hostname
 
 @require_os_version(16.04, op=gte)
 def set_hostname0(cache, *args, **kwargs):
-    hostname = run("hostname", quiet=True)
+    hostname = c.run("hostname", hide=True)
     if "." in hostname:
         set_hostname(hostname.partition(".")[0])
     return {"os_version": cache["os_version"]}
@@ -16,8 +15,8 @@ def set_hostname0(cache, *args, **kwargs):
 
 @require_os_version(16.04, op=gte)
 def motd1(*args, **kwargs):
-    if run("grep -Fqzw 18.10 /etc/lsb-release", warn_only=True, quiet=True).failed:
-        apt_depends("landscape-common")
+    if c.run("grep -Fqzw 18.10 /etc/lsb-release", warn=True, hide=True).exited != 0:
+        apt_depends(c, "landscape-common")
 
 
 @require_os_version(16.04, op=gte)

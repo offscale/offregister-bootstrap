@@ -1,5 +1,5 @@
 offregister_bootstrap
-===============
+=====================
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech)
 ![Python version range](https://img.shields.io/badge/python-2.7%20|%203.4%20|%203.5%20|%203.6%20|%203.7%20|%203.8%20|%203.9%20|%203.10-blue.svg)
 [![License](https://img.shields.io/badge/license-Apache--2.0%20OR%20MIT%20OR%20CC0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
