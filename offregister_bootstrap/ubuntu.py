@@ -31,3 +31,5 @@ def expand_partition2(*args, **kwargs):
 def be_awesome1(cache, *args, **kwargs):
     return 'awesome', cache['os_version']
 """
+
+__all__ = ["set_hostname0", "motd1", "expand_partition2"]
