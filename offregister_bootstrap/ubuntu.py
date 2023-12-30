@@ -20,7 +20,7 @@ def motd1(c, *args, **kwargs):
 
 
 @require_os_version(16.04, op=gte)
-def expand_partition2(*args, **kwargs):
+def expand_partition2(c, *args, **kwargs):
     pass
 
 
