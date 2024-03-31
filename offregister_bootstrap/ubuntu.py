@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from operator import __ge__ as gte
 
 from offregister_fab_utils.apt import apt_depends

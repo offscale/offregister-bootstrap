@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def set_hostname0(c, cache, *args, **kwargs):
     """
     Set the hostname to original hostname sans everything following first `.`
